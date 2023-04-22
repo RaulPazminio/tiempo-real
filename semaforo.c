@@ -6,7 +6,7 @@
 #include <alchemy/timer.h>
 #include <alchemy/sem.h>
 
-#define ITER 10
+#define ITER 100000
 
 static RT_TASK tarea1;
 static RT_TASK tarea2;
@@ -16,14 +16,14 @@ int global = 0;
 void tareaUno(void *arg){
     int i;
     for(i=0; i < ITER; i++){
-        printf("Tarea 1 la variable global es %d -----", ++global);
+        printf("Tarea 1 la variable global es %d -----\n", ++global);
     }
 }
 
 void tareaDos(void *arg){
     int i;
     for(i=0; i < ITER; i++){
-        printf("Tarea 2 la variable global es %d -----", --global);
+        printf("Tarea 2 la variable global es %d -----\n", --global);
     }
 }
 
